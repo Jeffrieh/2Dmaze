@@ -6,30 +6,39 @@ import java.awt.Canvas;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 
-public class Maze extends Canvas{
+public class Maze{
     public int size;
+
     Cell maze[][];
     Cell current;
 
     public Maze(int size){
         this.size = size;
         maze = new Cell[size][size];
+        generate();
     }
 
-    void checkNeighbours(){}
+    public void draw(Graphics g)
+    {
+        System.out.println("drawing!");
+        g.setColor(Color.BLACK);
 
-    public static void main(String[] args) {
-        int size = 500;
-        JFrame frame = new JFrame("Maze");
-        Canvas canvas = new Maze(size);
-        canvas.setSize(size, size);
-        frame.add(canvas);
-        frame.pack();
-        frame.setVisible(true);
+        for(int row = 0; row < size; row++){
+            for(int col = 0; col < size; col++){
+                Cell cur = maze[row][col];
+
+
+                //top
+
+                cur.paintComponent(g);
+
+            }
+        }
     }
 
-    public void paint(Graphics g) {
-        g.fillOval(100, 100, 200, 200);
+    public Dimension windowSize()
+    {
+        return new Dimension(size * Cell.HEIGHT, size * Cell.WIDTH);
     }
 
     void generate(){
@@ -40,5 +49,6 @@ public class Maze extends Canvas{
         }
         //start at the top left.
         current = maze[0][0];
+        current.active = true;
     }
 }
