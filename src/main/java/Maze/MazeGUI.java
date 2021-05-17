@@ -8,7 +8,7 @@ public class MazeGUI
 {
     public static void main(String[] args) throws IOException, InterruptedException
     {
-            int size = 100;
+            int size = 20;
             Maze maze = new Maze(size);
             JFrame frame = new JFrame("Maze");
             MazePanel panel = new MazePanel(maze);

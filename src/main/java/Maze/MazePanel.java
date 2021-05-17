@@ -17,7 +17,6 @@ class MazePanel extends JPanel
         super.paintComponent(page);
         setBackground(Color.white);
         this.setPreferredSize(maze.windowSize());
-
         maze.draw(page);
     }
 }
