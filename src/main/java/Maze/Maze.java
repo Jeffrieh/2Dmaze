@@ -2,11 +2,12 @@ package Maze;
 
 import java.awt.*;
 
-import java.awt.Canvas;
 import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.Stack;
-import javax.swing.JFrame;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.*;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Maze{
     public int size;
@@ -20,6 +21,34 @@ public class Maze{
         generate();
     }
 
+    public Cell findCellAt(int x, int y){
+        if(x > size * Cell.WIDTH || y > size * Cell.HEIGHT){
+            return null;
+        }
+
+        int a = (int) Math.floor(x / 10);
+        int b = (int) Math.floor(y / 10);
+
+        return maze[a][b];
+    }
+
+    public void setEndingPoint(Cell end){
+        //start solving
+        System.out.println(end);
+//        ArrayDeque<Cell> q = new ArrayDeque<Cell>();
+//        Cell root = maze[0][0];
+//        q.add(root);
+//        while(!q.isEmpty()){
+//            Cell cur = q.element();
+//            if(cur == end){
+//                return;
+//            }else{
+//                getUnvisitedNeighbours(cur);
+//            }
+//
+//        }
+    }
+
     public void draw(Graphics g)
     {
         g.setColor(Color.BLACK);
@@ -27,7 +56,6 @@ public class Maze{
         for(int row = 0; row < size; row++){
             for(int col = 0; col < size; col++){
                 Cell cur = maze[row][col];
-                //paint the cell
                 cur.paintComponent(g);
             }
         }
@@ -41,11 +69,10 @@ public class Maze{
     public void removeWallBetweenTwoCells(Cell x, Cell y){
 
         //get the orientation of two cells;
-
         //same row
-        if(x.j == y.j){
+        if(x.row == y.row){
             //if x is left of y
-            if(x.i < y.i){
+            if(x.col < y.col){
                 x.walls[1] = false;
                 y.walls[3] = false;
             }else{
@@ -54,7 +81,7 @@ public class Maze{
             }
         }else{
             //if x is above y
-            if(x.j < y.j){
+            if(x.row < y.row){
                 x.walls[2] = false;
                 y.walls[0] = false;
             }else{
@@ -67,64 +94,43 @@ public class Maze{
         y.repaint();
     }
 
-    public ArrayList<Cell> getUnvisitedNeighbours(Cell c){
-
-        ArrayList<Cell> neighbours = new ArrayList<>();
-
-        //TODO make this better.
-        //top
+    public HashMap<String, Cell> getNeighbours(Cell c){
+        HashMap<String, Cell> neighbours = new HashMap<>();
         try{
-            System.out.println("top");
-            if(maze[c.i - 1][c.j] != null && maze[c.i - 1][c.j].visited == false){
-                neighbours.add(maze[c.i - 1][c.j]);
-            }else{
-                System.out.println("couldnt add col : " + (c.i - 1) + " row : " + c.j + maze[c.i - 1][c.j].visited);
-            }
+            neighbours.put("NORTH", getCellAt(c.row - 1, c.col));
+            neighbours.put("EAST", getCellAt(c.row, c.col + 1));
+            neighbours.put("SOUTH", getCellAt(c.row + 1, c.col));
+            neighbours.put("WEST", getCellAt(c.row , c.col - 1));
         }catch (Exception e){
             System.out.println(e);
         }
 
-
-        //right
-        try{
-            System.out.println("right");
-
-            if(maze[c.i][c.j + 1] != null && maze[c.i][c.j + 1].visited == false){
-                neighbours.add(maze[c.i][c.j + 1]);
-            }
-        }catch (Exception e){
-
-        }
-
-        //bottom
-        try{
-            System.out.println("bottom");
-            if(maze[c.i + 1][c.j] != null && maze[c.i + 1][c.j].visited == false){
-                neighbours.add(maze[c.i + 1][c.j]);
-            }
-        }catch (Exception e){
-
-        }
-
-        //left
-        try{
-            System.out.println("left");
-            if(maze[c.i][c.j - 1] != null && maze[c.i][c.j - 1].visited == false){
-                neighbours.add(maze[c.i][c.j - 1]);
-            }
-        }catch (Exception e){
-
-        }
-
         return neighbours;
+    }
 
+    public List<Cell> getUnvisitedNeighbours(Cell c){
+        return getNeighbours(c).values().stream().filter(x -> x != null && x.visited == false).collect(Collectors.toList());
+    }
+
+    Cell getCellAt(int row, int col){
+        try{
+            return maze[row][col];
+        }catch (Exception e){
+            return null;
+        }
     }
 
     void generate(){
         Stack<Cell> s = new Stack();
         for(int row = 0; row < size; row++){
             for (int col = 0; col < size; col++){
-                maze[row][col] = new Cell(row,col);
+                try{
+                    Cell c = new Cell(row, col);
+                    maze[row][col] = c;
+                }catch (Exception e){
+                    System.out.println(e);
+                }
+
             }
         }
 
@@ -135,8 +141,8 @@ public class Maze{
             Cell cur = s.pop();
             cur.visited = true;
 
-            ArrayList<Cell> neighbours = getUnvisitedNeighbours(cur);
-
+            List<Cell> neighbours = getUnvisitedNeighbours(cur);
+            System.out.println("n : " + neighbours);
             if(!neighbours.isEmpty()){
                 s.push(cur);
                 int index = (int)(Math.random() * neighbours.size());
