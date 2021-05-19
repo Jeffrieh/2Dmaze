@@ -1,51 +1,42 @@
 package Maze;
 
+import Maze.Generators.DFS;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.List;
 
-class MazePanel extends JPanel implements MouseListener
-{
-    private Maze maze;
+public class MazePanel extends JPanel {
+    private final List<Cell> grid = new ArrayList<Cell>();
 
-    public MazePanel(Maze m)
-    {
-        maze = m;
-        addMouseListener(this);
+    public MazePanel(int size) {
+        for (int x = 0; x < size; x++) {
+            for (int y = 0; y < size; y++) {
+                grid.add(new Cell(x, y));
+            }
+        }
+
+        DFS solver = new DFS(grid, this);
     }
 
-
-    public void paintComponent(Graphics page)
-    {
-        super.paintComponent(page);
-        setBackground(Color.white);
-        this.setPreferredSize(maze.windowSize());
-        maze.draw(page);
-    }
-
+    //    public void paint(Graphics g) {
+//        super.paint(g);
+//        for (Cell c : grid) {
+//            c.draw(g);
+//        }
+//        grid.get(0).displayAsColor(g, Color.GREEN);
+//        grid.get(grid.size() - 1).displayAsColor(g, Color.YELLOW);
+//    }
     @Override
-    public void mouseClicked(MouseEvent e) {
-        maze.setEndingPoint(maze.findCellAt(e.getX(), e.getY()));
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        for (Cell c : grid) {
+            c.draw(g);
+        }
+        grid.get(0).displayAsColor(g, Color.GREEN);
+        grid.get(grid.size() - 1).displayAsColor(g, Color.YELLOW);
     }
 }

@@ -1,0 +1,8 @@
+
+™
+java:S1130	"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(¬Ä‚Ôûÿÿÿÿ8ïƒ©¥˜/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–¬Õùùÿÿÿÿ
+X	java:S125"<This block of commented-out lines of code should be removed.(åé½8©¨¥˜/
+Ž
+java:S1130	"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¬Ä‚Ôûÿÿÿÿ8ïƒ©¥˜/
+X	java:S125"<This block of commented-out lines of code should be removed.(¾Ë‰í8©¨¥˜/

@@ -1,0 +1,69 @@
+
+Q
+java:S1066h"/Merge this if statement with the enclosing one.(ê˜Öáùÿÿÿÿ8¯˜® ˜/
+M
+java:S3740í"/Provide the parametrized type for this generic.(Àˆ¡ƒ8†ãŸ˜/
+G
+java:S1659."%Declare "endTime" on a separate line.(¢ùŒºşÿÿÿÿ8ù…¥˜/
+9
+java:S3626‰"Remove this redundant jump.(ûÁİ…8­ŸÀŸ˜/
+Z	java:S106O"9Replace this use of System.out or System.err by a logger.(…ú»ûûÿÿÿÿ8ïŞ‡¥˜/
+[	java:S106ô"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ8†ãŸ˜/
+k
+java:S1871‘"MThis branch's code block is the same as the block for the branch on line 143.(µ´“¡8†ãŸ˜/
+p
+java:S1871˜"MThis branch's code block is the same as the block for the branch on line 150.(ÉàÙµùÿÿÿÿ8Ş©æŸ˜/
+U	java:S1063"9Replace this use of System.out or System.err by a logger.(Í¾ÇØ8îÕû ˜/
+Z
+java:S1197:"8Move the array designator from the variable to the type.(¨Œ×­üÿÿÿÿ8ŸÜŠö—/
+r
+java:S1104"PMake size a static final constant or non-public and provide accessors if needed.(õ˜óøÿÿÿÿ8ƒù±—/
+_
+java:S2184"BCast one of the operands of this division operation to a "double".(’„æÿ8³“†Ó—/
+L
+java:S2140„")Use "java.util.Random.nextInt()" instead.(¯†ˆëıÿÿÿÿ8†ãŸ˜/
+V
+java:S1128"9Remove this unused import 'java.awt.event.MouseListener'.(«Äñö8÷í±Ò—/
+M
+java:S14819"+Remove this unused "rowNum" local variable.(£…”™üÿÿÿÿ8ŞûíŸ˜/
+/
+java:S1700"Rename field "maze"(º¥„8ƒù±—/
+{
+java:S2293<"YReplace the type specification in this constructor call with the diamond operator ("<>").(…¦Ûšüÿÿÿÿ8÷¢Äõ—/
+M
+java:S1481:"+Remove this unused "colNum" local variable.(¨Œ×­üÿÿÿÿ8ŞûíŸ˜/
+T
+java:S1197"8Move the array designator from the variable to the type.(º¥„8ƒù±—/
+C
+java:S2185"&Remove this silly call to "Math.floor"(­š©ù8Áá†Ó—/
+Y	java:S125¶"<This block of commented-out lines of code should be removed.(ğî­‰8†ãŸ˜/
+H
+java:S1481d"&Remove this unused "l" local variable.(ı¼œ°ùÿÿÿÿ8— «¡˜/
+[	java:S106Ö"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ8†ãŸ˜/
+W	java:S1255"<This block of commented-out lines of code should be removed.(Áµˆ58÷¢Äõ—/
+n
+java:S1149í"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(Àˆ¡ƒ8†ãŸ˜/
+K
+java:S1481D")Remove this unused "dist" local variable.(¯ºÕøüÿÿÿÿ8Éˆ¥˜/
+
+java:S1319Î"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(ë‰Î«øÿÿÿÿ8†ãŸ˜/
+X	java:S125r"<This block of commented-out lines of code should be removed.(¨€€š8ŞûíŸ˜/
+S
+java:S1128"6Remove this unused import 'java.awt.event.MouseEvent'.(›õ8÷í±Ò—/
+\
+java:S18549":Remove this useless assignment to local variable "rowNum".(£…”™üÿÿÿÿ8ŞûíŸ˜/
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–¬Õùùÿÿÿÿ8ƒù±—/
+t
+java:S3776-"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ı™Ğÿÿÿÿÿ8¼Á¡ ˜/
+U
+java:S1197>"8Move the array designator from the variable to the type.(ëú©›8¼™É˜/
+C
+java:S2185"&Remove this silly call to "Math.floor"(’„æÿ8³“†Ó—/
+L
+java:S1125à")Remove the literal "false" boolean value.(º»’éÿÿÿÿÿ8†ãŸ˜/
+\
+java:S1854:":Remove this useless assignment to local variable "colNum".(¨Œ×­üÿÿÿÿ8ŞûíŸ˜/
+Z
+java:S11979"8Move the array designator from the variable to the type.(£…”™üÿÿÿÿ8ŸÜŠö—/
+_
+java:S2184"BCast one of the operands of this division operation to a "double".(­š©ù8Áá†Ó—/

@@ -1,0 +1,33 @@
+
+o
+java:S1104"RMake active a static final constant or non-public and provide accessors if needed.(ºñŞé8¬ÆÔÍ—/
+s
+java:S1104"QMake walls a static final constant or non-public and provide accessors if needed.(ú–òƒüÿÿÿÿ8ñäÎ—/
+l
+java:S1104"OMake row a static final constant or non-public and provide accessors if needed.(²¤÷”8ˆöÿÕ—/
+I
+java:S1948"'Make "neighbours" private or transient.(Æ±×‘øÿÿÿÿ8âòÓ—/
+N
+java:S1444",Make this "public static HEIGHT" field final(ñÃò§ùÿÿÿÿ8Ÿ™“²—/
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–¬Õùùÿÿÿÿ
+r
+java:S3008"PRename this field "WIDTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢¾Êİüÿÿÿÿ8§’²—/
+l
+java:S1104"OMake col a static final constant or non-public and provide accessors if needed.(¶¤´ó8ˆöÿÕ—/
+M
+java:S1444"+Make this "public static WIDTH" field final(¢¾Êİüÿÿÿÿ8Ê†“²—/
+p
+java:S1104"SMake visited a static final constant or non-public and provide accessors if needed.(˜ÇÌ™8‹¸‡Î—/
+K
+java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8ÄÅ¾Ö—/
+s
+java:S3008"QRename this field "HEIGHT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñÃò§ùÿÿÿÿ8§’²—/
+x
+java:S1104"VMake neighbours a static final constant or non-public and provide accessors if needed.(Æ±×‘øÿÿÿÿ8ßä²Ó—/
+W
+java:S1161":Add the "@Override" annotation above this method signature(ÈÊ“À8’”™˜/
+]	java:S125%"<This block of commented-out lines of code should be removed.(Ú¨ÂÀÿÿÿÿÿ8íÛ¤˜/
+s
+java:S1104"QMake WIDTH a static final constant or non-public and provide accessors if needed.(¢¾Êİüÿÿÿÿ8Ê†“²—/
+t
+java:S1104"RMake HEIGHT a static final constant or non-public and provide accessors if needed.(ñÃò§ùÿÿÿÿ8Ÿ™“²—/
